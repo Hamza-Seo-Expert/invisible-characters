@@ -1,3 +1,14 @@
-export const dynamic = "force-static";
+// app/robots.ts
+import { MetadataRoute } from 'next'
 
-// Existing content...
+export const dynamic = 'force-static'
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: '*',
+      allow: '/',
+    },
+    sitemap: 'https://acme.com/sitemap.xml',
+  }
+}
