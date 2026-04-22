@@ -1,5 +1,16 @@
 import type { MetadataRoute } from "next";
 
+// Add this line to resolve the build error
+export const dynamic = "force-static";
+
+const SITE_URL = "https://www.invisible-character.net";
+const LANGS = ["en", "es", "pt", "ar"];
+
+// ... rest of your code stays exactly the same
+
+
+import type { MetadataRoute } from "next";
+
 const SITE_URL = "https://www.invisible-character.net";
 const LANGS = ["en", "es", "pt", "ar"];
 
