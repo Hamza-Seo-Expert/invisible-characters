@@ -1,20 +1,11 @@
 import type { MetadataRoute } from "next";
 
-// Add this line to resolve the build error
+// This is the CRITICAL line for output: export
 export const dynamic = "force-static";
 
 const SITE_URL = "https://www.invisible-character.net";
 const LANGS = ["en", "es", "pt", "ar"];
 
-// ... rest of your code stays exactly the same
-
-
-import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://www.invisible-character.net";
-const LANGS = ["en", "es", "pt", "ar"];
-
-// All static routes (without lang prefix)
 const STATIC_ROUTES = [
   "",
   "/blog",
@@ -42,7 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1,
   });
 
-  // Static pages per language
   for (const lang of LANGS) {
     for (const route of STATIC_ROUTES) {
       entries.push({
@@ -58,7 +48,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    // Blog posts per language
     for (const slug of BLOG_SLUGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/blog/${slug}`,
